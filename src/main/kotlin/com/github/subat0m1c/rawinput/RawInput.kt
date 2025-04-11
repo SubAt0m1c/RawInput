@@ -32,6 +32,12 @@ object RawInput {
         rawInputJob = launchRawInput()
     }
 
+    @JvmStatic
+    fun guiClosed() {
+        dx = 0
+        dy = 0
+    }
+
     private fun launchRawInput() = scope.launch {
         controllers?.let { controllers ->
             while (enabled) {
@@ -42,7 +48,7 @@ object RawInput {
                             val mouseController = controller as Mouse
                             if (mouseController.x.pollData != 0f || mouseController.y.pollData != 0f) {
                                 mouse = mouseController
-                                mc.thePlayer?.addChatMessage(ChatComponentText("Mouse found: ${mouseController.name}") as IChatComponent) ?: println("Mouse found: ${mouseController.name}")
+                                mc.thePlayer?.addChatMessage(ChatComponentText("Mouse found: ${mouseController.name}")) ?: println("Mouse found: ${mouseController.name}")
                                 break
                             }
                         }

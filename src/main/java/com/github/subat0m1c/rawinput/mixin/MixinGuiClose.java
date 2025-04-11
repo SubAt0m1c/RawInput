@@ -1,16 +1,17 @@
 package com.github.subat0m1c.rawinput.mixin;
 
-import net.minecraft.client.gui.GuiMainMenu;
+import com.github.subat0m1c.rawinput.RawInput;
+import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(GuiMainMenu.class)
-public class MixinGuiMainMenu {
+@Mixin(Minecraft.class)
+public class MixinGuiClose {
 
-    @Inject(method = "initGui", at = @At("HEAD"))
-    public void onInitGui(CallbackInfo ci) {
-        System.out.println("Hello from Main Menu!");
+    @Inject(method = "setIngameFocus", at = @At("HEAD"))
+    void onClose(CallbackInfo ci) {
+        RawInput.guiClosed();
     }
 }
