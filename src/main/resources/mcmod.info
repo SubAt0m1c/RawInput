@@ -8,9 +8,9 @@
     "url": "",
     "updateUrl": "",
     "authorList": [
-      "LegendaryJG, SubAt0mic, some other guys idk"
+      "xCuri0", "Mixces","SubAt0mic"
     ],
-    "credits": "",
+    "credits": "original created by xCuri0, ported by Mixces, ported to kotlin and maintained by SubAt0mic",
     "logoFile": "",
     "screenshots": [],
     "dependencies": []
