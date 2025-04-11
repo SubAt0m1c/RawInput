@@ -1,14 +1,14 @@
 [
   {
     "modid": "${modid}",
-    "name": "Xample Mod",
-    "description": "A mod that is used as an example.",
+    "name": "rawinput",
+    "description": "no way rawinput thats crazy",
     "version": "${version}",
     "mcversion": "${mcversion}",
-    "url": "https://github.com/romangraef/Forge1.8.9Template/",
+    "url": "",
     "updateUrl": "",
     "authorList": [
-      "You"
+      "LegendaryJG, SubAt0mic, some other guys idk"
     ],
     "credits": "",
     "logoFile": "",
