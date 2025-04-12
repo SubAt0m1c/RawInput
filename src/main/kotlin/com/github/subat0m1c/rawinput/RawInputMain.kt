@@ -7,7 +7,6 @@ import com.github.subat0m1c.rawinput.commands.ToggleCommand.Companion.enabled
 import com.github.subat0m1c.rawinput.config.ConfigManager
 import kotlinx.coroutines.*
 import net.minecraft.client.Minecraft
-import net.minecraft.util.ChatComponentText
 import net.minecraftforge.client.ClientCommandHandler
 import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.fml.common.Mod

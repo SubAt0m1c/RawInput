@@ -3,7 +3,6 @@ package com.github.subat0m1c.rawinput
 import com.github.subat0m1c.rawinput.RawInput.findMouse
 import com.github.subat0m1c.rawinput.RawInput.mouse
 import com.github.subat0m1c.rawinput.commands.ConfigCommand.Companion.maxChange
-import com.github.subat0m1c.rawinput.commands.ConfigCommand.Companion.sens
 import com.github.subat0m1c.rawinput.commands.ToggleCommand.Companion.enabled
 import net.minecraft.util.MouseHelper
 import kotlin.math.abs
@@ -21,7 +20,7 @@ class RawMouseHelper : MouseHelper() {
 
         mouse?.apply {
             poll()
-            val (x, y) = (x.pollData * sens).toInt() to -(y.pollData * sens).toInt()
+            val (x, y) = x.pollData.toInt() to -y.pollData.toInt()
             if (maxChange > 0 && (abs(x) > maxChange || abs(y) > maxChange)) {
                 deltaX = 0
                 deltaY = 0
