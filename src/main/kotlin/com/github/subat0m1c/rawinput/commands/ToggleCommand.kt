@@ -1,7 +1,5 @@
 package com.github.subat0m1c.rawinput.commands
 
-import com.github.subat0m1c.rawinput.RawInput.closeRawInput
-import com.github.subat0m1c.rawinput.RawInput.relaunchRawInput
 import com.github.subat0m1c.rawinput.RawInputMain.Companion.mc
 import com.github.subat0m1c.rawinput.RawMouseHelper
 import com.github.subat0m1c.rawinput.config.Config
@@ -18,17 +16,16 @@ class ToggleCommand : CommandBase() {
     override fun getCommandUsage(sender: ICommandSender?): String = "Toggles Raw Input (/rawinput)"
 
     override fun processCommand(sender: ICommandSender?, args: Array<out String>?) {
-        enabled = !enabled
-        ConfigManager.save()
         if (mc.mouseHelper is RawMouseHelper) {
             mc.mouseHelper = MouseHelper()
-            closeRawInput("Toggled rawinput off")
+            enabled = false
             sender?.addChatMessage(ChatComponentText("Toggled OFF.") as IChatComponent)
         } else {
             mc.mouseHelper = RawMouseHelper()
-            relaunchRawInput("Toggled rawinput on")
+            enabled = true
             sender?.addChatMessage(ChatComponentText("Toggled ON.") as IChatComponent)
         }
+        ConfigManager.save()
     }
 
     override fun getRequiredPermissionLevel(): Int = 0

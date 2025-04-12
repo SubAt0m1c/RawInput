@@ -11,9 +11,7 @@ class Config <T : Any> (val name: String, private val Json: JsonManager<T>) {
         ConfigManager.settings.add(this)
     }
 
-    operator fun getValue(thisRef: Any?, property: KProperty<*>): T {
-        return value
-    }
+    operator fun getValue(thisRef: Any?, property: KProperty<*>): T = value
 
     operator fun setValue(thisRef: Any?, property: KProperty<*>, value: T) {
         this.value = value
@@ -36,6 +34,12 @@ class Config <T : Any> (val name: String, private val Json: JsonManager<T>) {
             default,
             { Json: JsonElement -> Json.asInt },
             { value: Int -> JsonPrimitive(value) }
+        )
+
+        fun floatSetting(default: Float) = JsonManager(
+            default,
+            { Json: JsonElement -> Json.asFloat },
+            { value: Float -> JsonPrimitive(value) }
         )
     }
 }

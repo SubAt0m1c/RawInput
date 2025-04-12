@@ -10,7 +10,7 @@
     "authorList": [
       "xCuri0", "Mixces","SubAt0mic"
     ],
-    "credits": "original created by xCuri0, ported by Mixces, ported to kotlin and maintained by SubAt0mic",
+    "credits": "original created by xCuri0, ported by Mixces, ported to kotlin and unthreaded by SubAt0mic",
     "logoFile": "",
     "screenshots": [],
     "dependencies": []
