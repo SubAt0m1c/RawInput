@@ -23,6 +23,10 @@ class RescanCommand : CommandBase() {
             }
         }
         sender?.addChatMessage(ChatComponentText("Rescanning input devices...") as IChatComponent)
+        RawInput.resetControllers().onFailure {
+            sender?.addChatMessage(ChatComponentText("Failed to reset default controllers. If you changed the mouse connection, you may need to restart the game"))
+            it.printStackTrace()
+        }
         RawInput.mouse = null
     }
 

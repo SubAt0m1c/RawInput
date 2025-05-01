@@ -35,12 +35,6 @@ class Config <T : Any> (val name: String, private val Json: JsonManager<T>) {
             { Json: JsonElement -> Json.asInt },
             { value: Int -> JsonPrimitive(value) }
         )
-
-        fun floatSetting(default: Float) = JsonManager(
-            default,
-            { Json: JsonElement -> Json.asFloat },
-            { value: Float -> JsonPrimitive(value) }
-        )
     }
 }
 

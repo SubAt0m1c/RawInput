@@ -13,7 +13,7 @@ class ConfigCommand : CommandBase() {
 
     override fun processCommand(sender: ICommandSender?, args: Array<out String>?) {
         if (args == null || args.isEmpty()) {
-            sender?.addChatMessage(ChatComponentText("Usage: /rawconfig <maxchange|view> <int?>")) // waittime|
+            sender?.addChatMessage(ChatComponentText("Usage: /rawconfig <maxchange|view> <int?>"))
             return
         }
 
